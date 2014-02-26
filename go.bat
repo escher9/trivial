@@ -1,3 +1,3 @@
-add.bat
+git add *
 git commit -m "%1"
-push.bat
+git push origin master
