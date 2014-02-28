@@ -2,4 +2,5 @@
 *.out
 *.files
 test.*
+*.sw?
 
