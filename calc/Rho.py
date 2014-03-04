@@ -4,8 +4,8 @@ from unit import WithUnit
 class Rho(object):
     """docstring for Rho"""
     def __init__(self):
-        self._rho      = 0
-        self._v        = 0
+        self._rho     = 0
+        self._v       = 0
         self.rho_unit = 0
         self.v_unit   = 0
         
@@ -63,7 +63,7 @@ class Rho(object):
 
         #}}}
 
-r = Rho() 
-ro = r.rho(18.0) 
-v = r.V_ss( r.rho(18) ) 
+r  = Rho()
+ro = r.rho(18.0)
+v  = r.V_ss( r.rho(18) )
 print r.v_unit.prettyvalue
