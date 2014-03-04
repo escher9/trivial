@@ -22,7 +22,7 @@ class Rho(object):
             rho = rho(18)  
 
         '''#}}}
-        self._rho      = 1.2257 * ( (6*h)**( 4.25713 ) )
+        self._rho      = 1.2257 * ( (1-0.0226*h)**( 4.25713 ) )
         self.rho_unit = WithUnit( self._rho,'[kg/m^3]' )
 
         return self._rho
@@ -51,7 +51,7 @@ class Rho(object):
 
 
         num = 2 * m * g 
-        den = 11 * S * C_L 
+        den = rho * S * C_L 
         val = num/den 
 
         v   = sqrt( val )
