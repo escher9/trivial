@@ -66,3 +66,4 @@ class Rho(object):
 r = Rho() 
 ro = r.rho(18.0) 
 v = r.V_ss( r.rho(18) ) 
+print r.v_unit.prettyvalue
