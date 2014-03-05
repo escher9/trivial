@@ -3,11 +3,11 @@ from unit import WithUnit
 
 class Rho(object):
     """docstring for Rho"""
+    set = {'velocity':0,'density':0} 
     def __init__(self):
-        self._rho     = 0
-        self._v       = 0
-        self.rho_unit = 0
-        self.v_unit   = 0
+        self._rho      = 0
+        self._v        = 0
+        self.with_unit = 0
         
     def rho(self,h):#{{{
         '''#{{{
@@ -23,7 +23,9 @@ class Rho(object):
 
         '''#}}}
         self._rho      = 1.2257 * ( (1-0.0226*h)**( 4.25713 ) )
-        self.rho_unit = WithUnit( self._rho,'[kg/m^3]' )
+
+        title = 'density' 
+        self.set[title] = WithUnit( title,self._rho )
 
         return self._rho
         
@@ -57,7 +59,8 @@ class Rho(object):
         v   = sqrt( val )
 
         self._v = v 
-        self.v_unit = WithUnit( self._v,'[m/s]' )
+        title = 'velocity' 
+        self.set[title] = WithUnit( title,self._v )
 
         return self._v
 
@@ -65,5 +68,10 @@ class Rho(object):
 
 r  = Rho()
 ro = r.rho(18.0)
-v  = r.V_ss( r.rho(18) )
-print r.v_unit.prettyvalue
+v0  = r.V_ss( r.rho(18) )
+r.set['velocity'].convert()
+r.set['velocity'].convert()
+r.set['velocity'].convert()
+r.set['velocity'].convert()
+r.set['velocity'].convert()
+print r.set['velocity'].prettyvalue_km
