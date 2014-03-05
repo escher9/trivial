@@ -68,17 +68,24 @@ class Rho(object):
         #}}}
 
 r  = Rho()
+def test():
+    # v0  = r.V_ss( r.rho(18) )
+    print r.set['velocity'].prettyvalue_km
+    r.set['velocity'].convert()
+    print r.set['velocity'].prettyvalue
+    r.set['velocity'].convert()
+    print r.set['velocity'].prettyvalue
+    r.set['density'].convert()
+    print r.set['density'].prettyvalue
+    r.set['density'].convert()
+    print r.set['density'].prettyvalue
+    print '--------------------------------'
+
+r.rho(0)
+test()
+
+r.rho(.3)
+test()
+
 r.rho(18)
-# v0  = r.V_ss( r.rho(18) )
-r.set['velocity'].convert()
-r.set['velocity'].convert()
-r.set['velocity'].convert()
-r.set['velocity'].convert()
-r.set['velocity'].convert()
-print r.set['velocity'].prettyvalue_km
-print r.set['velocity'].prettyvalue
-r.set['velocity'].convert()
-print r.set['velocity'].prettyvalue
-print r.set['density'].prettyvalue
-r.set['density'].convert()
-print r.set['density'].prettyvalue
+test()
