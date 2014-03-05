@@ -27,6 +27,7 @@ class Rho(object):
         title = 'density' 
         self.set[title] = WithUnit( title,self._rho )
 
+        self.V_ss(self._rho)
         return self._rho
         
         #}}}
@@ -60,21 +61,24 @@ class Rho(object):
 
         self._v = v 
         title = 'velocity' 
-        self.set[title] = WithUnit( title,self._v )
+        self.set[title] = WithUnit( title, self._v )
 
         return self._v
 
         #}}}
 
 r  = Rho()
-ro = r.rho(0.0)
-v0  = r.V_ss( r.rho(0) )
+r.rho(18)
+# v0  = r.V_ss( r.rho(18) )
 r.set['velocity'].convert()
 r.set['velocity'].convert()
 r.set['velocity'].convert()
 r.set['velocity'].convert()
 r.set['velocity'].convert()
 print r.set['velocity'].prettyvalue_km
+print r.set['velocity'].prettyvalue
+r.set['velocity'].convert()
+print r.set['velocity'].prettyvalue
 print r.set['density'].prettyvalue
 r.set['density'].convert()
 print r.set['density'].prettyvalue
